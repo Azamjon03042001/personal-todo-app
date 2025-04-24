@@ -1,10 +1,11 @@
 /* eslint-disable no-unused-vars */
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Button, Typography, useTheme } from "@mui/material";
 import { motion } from "framer-motion";
 import { useState } from "react";
 
 const ProjectInfo = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const theme = useTheme();
 
   const handleToggle = () => {
     setIsOpen((prev) => !prev);
@@ -28,9 +29,9 @@ const ProjectInfo = () => {
             mb={3}
             p={2}
             border="1px solid"
-            borderColor="divider"
+            borderColor={theme.palette.divider}
             borderRadius={2}
-            bgcolor="#121212"
+            bgcolor={theme.palette.background.paper}
           >
             <Typography variant="h6" gutterBottom>
               О проекте

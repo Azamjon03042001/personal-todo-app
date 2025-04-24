@@ -75,18 +75,17 @@ export default function App({ toggleTheme, mode }) {
   return (
     <Container maxWidth="md" sx={{ mt: 4 }}>
       {/* Theme toggle */}
+      <IconButton
+        onClick={toggleTheme}
+        sx={{
+          transform: mode === "dark" ? "rotate(180deg)" : "none",
+          transition: "transform .3s",
+        }}
+      >
+        {mode === "dark" ? <Brightness7Icon /> : <Brightness4Icon />}
+      </IconButton>
       <Box display="flex" justifyContent="space-between" mb={1}>
         <ProjectInfo />
-
-        <IconButton
-          onClick={toggleTheme}
-          sx={{
-            transform: mode === "dark" ? "rotate(180deg)" : "none",
-            transition: "transform .3s",
-          }}
-        >
-          {mode === "dark" ? <Brightness7Icon /> : <Brightness4Icon />}
-        </IconButton>
       </Box>
 
       <Typography variant="h4" align="center" gutterBottom>
