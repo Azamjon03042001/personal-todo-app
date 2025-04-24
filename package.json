@@ -10,7 +10,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "vite build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "git add . && git commit -m 'Обновление' && git push && npm run build && npx gh-pages -d dist"
   },
   "dependencies": {
     "@date-io/date-fns": "^3.2.1",
